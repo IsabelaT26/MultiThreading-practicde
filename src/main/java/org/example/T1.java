@@ -7,9 +7,19 @@ public class T1 extends Thread {
         start();
     }
 
+    @Override
     public void run() {
-        while(true) {
-            System.out.println("In run");
+        int counter = 0;
+        while (counter < 10) {
+            System.out.println("STDOUT");
+
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                break;
+            }
+
+            counter++;
         }
     }
 
